@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container-fluid{
+    background-color: rgb(27, 27, 27);
+}
+/*Inputs*/
+#inputMetros {
+    display:flex; 
+    flex-direction:row;
+}
+
+#inputsFiltro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(27, 27, 27);
+    height: 100vh;
+    padding: 5%;
+    border-right: 8px solid rgb(255, 217, 0) ;
+}
+
+#inputM {
+    margin: 5px;
+}
+
+h4, span, h1, h2, h3, p, span{
+    color: white;
+}
+
+
+/*Card Propriedades*/
+
+#casas {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.5fr 0.5fr;
+    justify-content: space-between;
+    grid-gap: 10px;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    background-color: rgb(27, 27, 27);
+}
+
+#cardPropriedad {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 2px solid rgba(134, 134, 134, 0.26);
+    background-color: rgb(70, 70, 70);
+    flex-wrap: nowrap;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(189, 189, 189, 0.26);;
+}
+
+#cardPropriedad img {
+    width: 100%;
+}
+
+#CM{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#MC{
+    margin: 10px;
+}
+
+#verMas{
+    margin: 10px;
+}
+
+
+#ctdFiltros{
+    text-align: center;
+    border-bottom: 5px solid rgb(255, 217, 0) ;;
+    
+}
+
+
+
+
+
+
+
+
+
+
