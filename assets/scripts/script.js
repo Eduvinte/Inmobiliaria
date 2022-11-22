@@ -82,6 +82,8 @@ for(let propriedade of propriedades){
    
 
 document.querySelector("#btn").addEventListener('click', () => {
+
+    
     let ctdCuartos = document.getElementById("ctdCuartos").value
     let desde = document.getElementById("desde").value
     let hasta = document.getElementById("hasta").value
@@ -89,34 +91,42 @@ document.querySelector("#btn").addEventListener('click', () => {
     let ctdFiltro = 0
     let html = ''
 
-    for(let propriedade of propriedades){
+    if(ctdCuartos == 0 || desde == 0 || hasta == 0){
+        alert("Complete todos los campos del formulário")
+    }else {
+
+        for(let propriedade of propriedades){
       
-    if(propriedade.cuartos == ctdCuartos && propriedade.metros == desde || propriedade.metros == hasta){
-        html += `
-        <div id="cardPropriedad">
-            <img src="${propriedade.src}">  
-            <h3>${propriedade.titulo}</h3>
-            <div id="CM">
-            <span id="MC">Cuartos: ${propriedade.cuartos}</span>
-            <span id="MC">Metros: ${propriedade.metros}</span></div>
-            <p>${propriedade.descripcion}</p>
-            <button class="btn btn-warning" id="verMas">Ver más</button>
-        </div>
-    `
-    ctdFiltro++
-    
+            if(propriedade.cuartos == ctdCuartos && propriedade.metros == desde || propriedade.metros == hasta){
+                html += `
+                <div id="cardPropriedad">
+                    <img src="${propriedade.src}">  
+                    <h3>${propriedade.titulo}</h3>
+                    <div id="CM">
+                    <span id="MC">Cuartos: ${propriedade.cuartos}</span>
+                    <span id="MC">Metros: ${propriedade.metros}</span></div>
+                    <p>${propriedade.descripcion}</p>
+                    <button class="btn btn-warning" id="verMas">Ver más</button>
+                </div>
+            `
+            ctdFiltro++
+            
+            }
+              
+            }
+        
+            let casas = document.querySelector("#casas")
+        
+            casas.innerHTML = html
+        
+           ctdFiltros.innerHTML = `
+                <h1>Propriedades encontradas</h1>
+                <h1>${ctdFiltro}</h1>
+            `
+
     }
-      
-    }
 
-    let casas = document.querySelector("#casas")
-
-    casas.innerHTML = html
-
-   ctdFiltros.innerHTML = `
-        <h1>Propriedades encontradas</h1>
-        <h1>${ctdFiltro}</h1>
-    `
+           
     
 })
 
